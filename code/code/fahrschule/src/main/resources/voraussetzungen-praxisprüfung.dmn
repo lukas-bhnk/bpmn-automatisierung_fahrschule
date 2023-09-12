@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_169sdcg" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.5.0">
+  <decision id="voraussetzungenPraxisDMN" name="Alle Voraussetzungen für Praxisprüfung sind erfüllt">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Fahrstunden" camunda:inputVariable="anzahlFahrstunden">
+        <inputExpression id="inputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1iqivbk" label="Theoriestunden" camunda:inputVariable="anzahlTheoriestunden">
+        <inputExpression id="LiteralExpression_1vhvnq0" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1rvcfba" label="Überlandfahrten" camunda:inputVariable="anzahlUeberlandfahrten">
+        <inputExpression id="LiteralExpression_0prp8d8" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1vkkeiu" label="Autobahnfahrten" camunda:inputVariable="anzahlAutobahnfahrten">
+        <inputExpression id="LiteralExpression_0ij4llh" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1737ey1" label="Nachtfahrten" camunda:inputVariable="anzahlNachtfahrten">
+        <inputExpression id="LiteralExpression_1g9lcpe" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1s1zkr8" label="Bestandene Theorieprüfung" camunda:inputVariable="bestandeneTheoriepruefung">
+        <inputExpression id="LiteralExpression_1ko0l5g" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Mindestvoraussetzungen" name="mindestvoraussetzungen" typeRef="boolean" />
+      <rule id="DecisionRule_05i2b95">
+        <description>zu wenige Fahrstunden</description>
+        <inputEntry id="UnaryTests_1thycc4">
+          <text>&lt; 12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uhyk9t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w2ecvk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_141vg6x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j48dr1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00thn3o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rg50od">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ywsru4">
+        <description>zu wenige Theoriestunden</description>
+        <inputEntry id="UnaryTests_0u4nb7b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wofbp2">
+          <text>&lt; 12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jts1o8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ee9t42">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fa3zju">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07kz7yk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l8vtfh">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19s5xsu">
+        <description>zu wenige Überlandfahrten</description>
+        <inputEntry id="UnaryTests_1vzyxxt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i3ffpd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_030u54g">
+          <text>&lt; 5</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05jah7z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i2umnw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w2dn6u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kk252g">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1q2eo30">
+        <description>zu wenige Autobahnfahrten</description>
+        <inputEntry id="UnaryTests_1g1fpum">
+          <text>1</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06cj759">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ysxsw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uj0hp3">
+          <text>&lt; 4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c5smg0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07fzxeg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1py7qm6">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_029xy5b">
+        <description>zu wenige Nachtfahrten</description>
+        <inputEntry id="UnaryTests_1tvoga1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_083o5nf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f8b8m2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yo9biq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sp7d6a">
+          <text>&lt; 3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nnvtap">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lqcaf6">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rd8496">
+        <description>Theorieprüfung nicht bestanden</description>
+        <inputEntry id="UnaryTests_0g2vwy8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ame518">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mukw69">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nnsy14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e4kmlr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nqrjdm">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_023d913">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xqnk26">
+        <description>alle Voraussetzungen erfüllt</description>
+        <inputEntry id="UnaryTests_0guu0y6">
+          <text>&gt;= 12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16n8pim">
+          <text>&gt;= 12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rmfa24">
+          <text>&gt;= 5</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s4h7hj">
+          <text>&gt;= 4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sqn41q">
+          <text>&gt;= 3</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18i1204">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10sdkyg">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0ljezyo">
+      <dmndi:DMNShape id="DMNShape_0ls6vjk" dmnElementRef="voraussetzungenPraxisDMN">
+        <dc:Bounds height="80" width="180" x="120" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

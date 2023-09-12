@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_169sdcg" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.5.0">
+  <decision id="voraussetzungenTheorieDMN" name="Alle Voraussetzungen für die Theorieprüfung sind erfüllt">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="InputClause_1iqivbk" label="Theoriestunden" camunda:inputVariable="anzahlTheoriestunden">
+        <inputExpression id="LiteralExpression_1vhvnq0" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1rvcfba" label="Zusatzstunden" camunda:inputVariable="anzahlZusatzstunden">
+        <inputExpression id="LiteralExpression_0prp8d8" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ga2v98" label="Fahrschulfragen" camunda:inputVariable="appProzent">
+        <inputExpression id="LiteralExpression_0mtjnga" typeRef="long">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Mindestvoraussetzungen" name="mindestvoraussetzungen" typeRef="boolean" />
+      <rule id="DecisionRule_05i2b95">
+        <description>Mindestanzahl Theoriestunden nicht erreicht</description>
+        <inputEntry id="UnaryTests_0uhyk9t">
+          <text>&lt; 12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w2ecvk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jqoant">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rg50od">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ywsru4">
+        <description>Mindestanzahl Zusatzstunden nicht erreicht</description>
+        <inputEntry id="UnaryTests_1wofbp2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jts1o8">
+          <text>&lt; 2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hvjgrc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l8vtfh">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00xm3yo">
+        <description>Mindestanzahl an richtig beantworteten Fragen in der Fahrschul-APP nicht erfüllt</description>
+        <inputEntry id="UnaryTests_1l9un6h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ctk8xc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nsptm1">
+          <text>&lt; 90</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1az6klu">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xqnk26">
+        <description>alle Voraussetzungen erfüllt</description>
+        <inputEntry id="UnaryTests_16n8pim">
+          <text>&gt;= 12</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rmfa24">
+          <text>&gt;= 2</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vslwpb">
+          <text>&gt;= 90</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10sdkyg">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0ljezyo">
+      <dmndi:DMNShape id="DMNShape_0ls6vjk" dmnElementRef="voraussetzungenTheorieDMN">
+        <dc:Bounds height="80" width="180" x="120" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
